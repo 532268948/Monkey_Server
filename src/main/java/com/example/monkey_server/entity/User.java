@@ -1,8 +1,9 @@
 package com.example.monkey_server.entity;
 
 /**
+ * Monkey_Server
+ *
  * @author 叶天华
- * @project Monkey_Server
  * @date 2019/1/3 20:59
  */
 public class User {
@@ -13,6 +14,8 @@ public class User {
     private String phone;
     private Integer gender;
     private String head;
+    private String token;
+    private Long deadTime;
 
     public Integer getId() {
         return Id;
@@ -70,6 +73,22 @@ public class User {
         this.head = head;
     }
 
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public Long getDeadTime() {
+        return deadTime;
+    }
+
+    public void setDeadTime(Long deadTime) {
+        this.deadTime = deadTime;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -80,6 +99,8 @@ public class User {
                 ",phone=" + phone +
                 ",gender=" + gender +
                 ",head=" + head +
+                ",token=" + token +
+                ",deadTime=" + deadTime +
                 "}";
     }
 }
