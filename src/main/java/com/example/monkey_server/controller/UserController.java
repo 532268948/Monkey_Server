@@ -1,12 +1,11 @@
 package com.example.monkey_server.controller;
 
-import com.example.monkey_server.dao.UserDao;
-import com.example.monkey_server.entity.User;
+import com.example.monkey_server.response.ResponseWrapper;
+import com.example.monkey_server.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 /**
  * @author 叶天华
@@ -18,11 +17,16 @@ import java.util.List;
 public class UserController {
 
     @Autowired
-    UserDao userDao;
+    UserService userService;
 
-    @RequestMapping(value = "/login")
-    public List<User> login() {
-        return userDao.selectUserByName("15869107730");
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public ResponseWrapper login(String name, String password) {
+        return userService.login(name, password);
+    }
+
+    @RequestMapping(value = "/information",method = RequestMethod.POST)
+    public ResponseWrapper getUserInformation(String token) {
+        return userService.getUserInformation(token);
     }
 
     @RequestMapping(value = "/test")

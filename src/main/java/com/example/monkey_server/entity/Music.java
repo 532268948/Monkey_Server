@@ -6,8 +6,7 @@ package com.example.monkey_server.entity;
  * @author 叶天华
  * @date 2019/1/6 14:11
  */
-public class Music {
-    private Integer id;
+public class Music extends BaseEntity{
     private Integer type;
     private String name;
     private String author;
@@ -15,16 +14,9 @@ public class Music {
     private Integer free;
     private Float price;
     private String resource;
+    private String during;
     private Long playTimes;
     private Integer status;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public Integer getType() {
         return type;
@@ -80,6 +72,14 @@ public class Music {
 
     public void setResource(String resource) {
         this.resource = resource;
+    }
+
+    public String getDuring() {
+        return during;
+    }
+
+    public void setDuring(String during) {
+        this.during = during;
     }
 
     public Long getPlayTimes() {

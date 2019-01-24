@@ -6,24 +6,13 @@ package com.example.monkey_server.entity;
  * @author 叶天华
  * @date 2019/1/3 20:59
  */
-public class User {
-    private Integer Id;
+public class User extends BaseEntity{
     private String name;
     private String password;
-    private String nickName;
+    private String nickname;
     private String phone;
     private Integer gender;
     private String head;
-    private String token;
-    private Long deadTime;
-
-    public Integer getId() {
-        return Id;
-    }
-
-    public void setId(Integer id) {
-        Id = id;
-    }
 
     public String getName() {
         return name;
@@ -41,12 +30,12 @@ public class User {
         this.password = password;
     }
 
-    public String getNickName() {
-        return nickName;
+    public String getNickname() {
+        return nickname;
     }
 
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
     public String getPhone() {
@@ -73,34 +62,16 @@ public class User {
         this.head = head;
     }
 
-    public String getToken() {
-        return token;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
-    }
-
-    public Long getDeadTime() {
-        return deadTime;
-    }
-
-    public void setDeadTime(Long deadTime) {
-        this.deadTime = deadTime;
-    }
-
     @Override
     public String toString() {
         return "User{" +
                 "Id=" + Id +
                 ",name=" + name +
                 ",password=" + password +
-                ",nickName=" + nickName +
+                ",nickName=" + nickname +
                 ",phone=" + phone +
                 ",gender=" + gender +
                 ",head=" + head +
-                ",token=" + token +
-                ",deadTime=" + deadTime +
                 "}";
     }
 }

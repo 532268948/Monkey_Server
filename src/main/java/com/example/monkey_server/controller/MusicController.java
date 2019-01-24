@@ -1,9 +1,10 @@
 package com.example.monkey_server.controller;
 
-import com.example.monkey_server.dao.MusicDao;
-import com.example.monkey_server.entity.Music;
+import com.example.monkey_server.response.ResponseWrapper;
+import com.example.monkey_server.service.MusicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -16,11 +17,19 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/music")
 public class MusicController {
 
+    //    @Autowired
+//    MusicDao musicDao;
+//
     @Autowired
-    MusicDao musicDao;
+    MusicService musicService;
 
-    @RequestMapping(value = "search_music")
-    public Music searchMusic(Integer id){
-        return musicDao.searchMusicById(id);
+    //    @RequestMapping(value = "/search_music")
+//    public Music searchMusic(Integer id){
+//        return musicDao.searchMusicById(id);
+//    }
+//
+    @RequestMapping(value = "/sleep_before", method = RequestMethod.POST)
+    public ResponseWrapper getSleepBeforeMusic(String token, Integer currentPage) {
+        return musicService.getSleepBeforeMusic(token, currentPage);
     }
 }
