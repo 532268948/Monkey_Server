@@ -28,4 +28,11 @@ public class Constant {
         public static final String MESSAGE_UN_KNOW_ERROR = "未知错误";
         public static final String MESSAGE_SUCCESS_WITHOUT_DATA = "没有更多数据了";
     }
+
+    public static class TokenStatus{
+        public static final int TOKEN_UN_LOGIN=1;
+        public static final int TOKEN_UN_REGISTER=2;
+        public static final int TOKEN_LOGIN=3;
+        public static final int TOKEN_UN_KNOW_ERROR=4;
+    }
 }

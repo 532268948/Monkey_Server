@@ -40,7 +40,7 @@ public class ResponseUtil {
         return response;
     }
 
-    public static ResponseWrapper withoutRigster() {
+    public static ResponseWrapper withoutRegister() {
         response.setCode(Constant.HttpCode.WITHOUT_REGISTER);
         response.setMsg(Constant.HttpMessage.MESSAGE_WITHOUT_REGISTER);
         response.setData(null);

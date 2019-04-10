@@ -1,5 +1,7 @@
 package com.example.monkey_server.util;
 
+import com.example.monkey_server.response.TokenWrapper;
+
 import java.io.UnsupportedEncodingException;
 import java.util.Base64;
 import java.util.Random;

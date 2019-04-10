@@ -7,13 +7,13 @@ package com.example.monkey_server.entity;
  * @date 2019/1/23 16:29
  */
 public class BaseEntity {
-    protected Integer Id;
+    protected Integer id;
 
     public Integer getId() {
-        return Id;
+        return id;
     }
 
-    public void setId(Integer Id) {
-        this.Id = Id;
+    public void setId(Integer id) {
+        this.id = id;
     }
 }
