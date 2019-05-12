@@ -38,7 +38,7 @@ public class UserServiceImpl implements UserService {
         }
 
         Map<String, Object> map = userDao.selectUserByNameAndPassword(name, password);
-        if (map == null && map.isEmpty()) {
+        if (map == null || map.isEmpty()) {
             return ResponseUtil.withoutRegister();
         }
 

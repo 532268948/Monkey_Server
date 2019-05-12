@@ -14,8 +14,6 @@ import com.example.monkey_server.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.sql.Date;
-
 /**
  * Monkey_Server
  *
@@ -68,7 +66,7 @@ public class SleepServiceImpl extends BaseServiceImpl implements SleepService {
                     sleep.setGrade(calculateGrade(null));
                     int code=sleepDao.insertSleepData(sleep);
                     if (code>0){
-                        return ResponseUtil.getDataSuccess(null);
+                        return ResponseUtil.getDataSuccess(sleepDao.getSleepBean(sleep.getId()));
                     }else {
                         return ResponseUtil.getDataFalse("数据插入失败");
                     }

@@ -6,9 +6,14 @@
         SELECT * FROM sleep s,user u WHERE uid = #{id} and s.uid=u.id
     </select>
 
-    <insert id="insertSleepData" parameterType="com.example.monkey_server.entity.Sleep">
+    <insert id="insertSleepData" parameterType="com.example.monkey_server.entity.Sleep" useGeneratedKeys="true"
+            keyProperty="id">
         insert sleep(uid,start_time,end_time,detail,grade) values (#{user.id},#{start_time},#{end_time},#{detail},#{grade})
     </insert>
+
+    <select id="getSleepBean" resultMap="SleepBean">
+        select * from sleep s where s.id = #{id}
+    </select>
 
     <resultMap id="SleepBean" type="com.example.monkey_server.entity.Sleep">
         <id column="id" property="id"/>

@@ -6,7 +6,7 @@
     </select>
 
     <select id="selectUserByNameAndPassword" resultType="map">
-        SELECT user.id,user.name,user.nickname,user.phone,user.gender,user.head FROM user WHERE name = #{name}
+        SELECT user.id,user.name,user.nickname,user.phone,user.gender,user.head FROM user WHERE name = #{name} and password=#{password}
     </select>
 
     <select id="selectUserById" resultType="map">

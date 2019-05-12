@@ -1,5 +1,6 @@
 package com.example.monkey_server.dao;
 
+import com.example.monkey_server.bean.response.SleepBean;
 import com.example.monkey_server.bean.response.UserSleepBean;
 import com.example.monkey_server.entity.Sleep;
 import com.example.monkey_server.entity.User;
@@ -26,5 +27,12 @@ public interface SleepDao {
      */
     UserSleepBean getSleepList(Integer id);
 
+    /**
+     * 添加睡眠数据
+     * @param sleep
+     * @return
+     */
     int insertSleepData(Sleep sleep);
+
+    Sleep getSleepBean(Integer id);
 }
